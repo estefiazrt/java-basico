@@ -63,8 +63,9 @@ function addPalabraLista(){
     let input = document.getElementById("txtEntrada");
     // Obtner el valor del input
     const texto = input.value.trim();
+    if (texto === "") return;
     // Transformar a mayusculas
-    const textMayuscula = texto.toUppercase();
+    const textMayuscula = texto.toUpperCase();
     // Agregar item a la lista
     let lista = document.getElementById("lstPalabras");
     // Creando un nuevo elemento HTML, li = list item
@@ -73,4 +74,7 @@ function addPalabraLista(){
     nuevoItem.textContent = textMayuscula;
     // Agregar item a la lista
     lista.appendChild(nuevoItem);
+    // limpiar y establecer foco
+    input.value = "";
+    input.focus();
 }
